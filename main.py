@@ -26,7 +26,7 @@ sorted_tweets = sorted(tweets, key=lambda x: datetime.strptime(x['tweet']['creat
 # Iterate over tweets and post them on Mastodon
 for i, tweet in enumerate(sorted_tweets):
     # Extract tweet content
-    content = tweet['tweet']['full_text'] + '\n\n#urdu #poetry #pakistan #islam #muslim'
+    content = tweet['tweet']['full_text']
     print(i, tweet['tweet']['created_at'], content[:64])
     # Create the status (post)
     status = mastodon.status_post(content)
